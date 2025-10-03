@@ -39,7 +39,7 @@ export default function NewItem() {
         </button>
       </div>
     
-      <p className="Limit border-e-amber-200"> Value Limits</p>
+      <p className="Limit"> Value Limits</p>
 
       <p className="text-sm text-gray-500 mt-3">Min: 1 | Max: 20</p>
 
