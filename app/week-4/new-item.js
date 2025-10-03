@@ -38,6 +38,9 @@ export default function NewItem() {
           +
         </button>
       </div>
+
+      <p className="text-sm text-gray-500 mt-3">Min: 1 | Max: 20</p>
+      
     </div>
   );
 }
