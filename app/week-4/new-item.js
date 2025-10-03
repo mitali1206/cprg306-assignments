@@ -38,12 +38,12 @@ export default function NewItem() {
           +
         </button>
       </div>
-    <br>
+    <div>
       <p className="Limit bg-red-800"> Value Limits</p>
 
       <p className="text-sm text-gray-500 mt-3">Min: 1 | Max: 20</p>
-      
-      </br>
+
+    </div>  ,
     </div>
   );
 }
