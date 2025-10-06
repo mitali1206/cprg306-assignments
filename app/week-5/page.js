@@ -1,12 +1,21 @@
-import NewItem from "./new-item";
+import Link from "next/link";
 
-export default function Page() {
+export default function Home() {
   return (
-    <main className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white shadow-lg rounded-2xl p-8">
-        <h1 className="text-2xl font-bold mb-6 text-center">New Item</h1>
-        <NewItem />
-      </div>
+    <main className="p-8">
+      <h1 className="text-3xl font-bold mb-6">Assignments</h1>
+      <ul className="space-y-4">
+        <li>
+          <Link href="/week-4" className="text-blue-600 hover:underline">
+            Week 4 Assignment
+          </Link>
+        </li>
+        <li>
+          <Link href="/week-5" className="text-blue-600 hover:underline">
+            Week 5 Assignment
+          </Link>
+        </li>
+      </ul>
     </main>
   );
 }
