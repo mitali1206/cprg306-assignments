@@ -3,12 +3,14 @@
 import { useState } from "react";
 
 export default function NewItem() {
-  // ✅ Initialize state variables
+ 
   const [name, setName] = useState("");
-  const [quantity, setQuantity] = useState(1);
+
   const [category, setCategory] = useState("produce");
 
-  // ✅ Handle quantity changes
+  // quantity function 
+  const [quantity, setQuantity] = useState(1);
+
   function increase() {
     if (quantity < 20) {
       setQuantity(quantity + 1);
@@ -21,22 +23,15 @@ export default function NewItem() {
     }
   }
 
-  // ✅ Form submission handler
+  // submission handler
   function handleSubmit(e) {
     e.preventDefault();
 
-    const item = {
-      name,
-      quantity,
-      category,
-    };
-
+    const item = { name, quantity, category };
     console.log(item);
-    alert(
-      `Item Added:\nName: ${name}\nQuantity: ${quantity}\nCategory: ${category}`
-    );
+    alert(`Item Added \nName: ${name}\nQuantity: ${quantity}\nCategory: ${category}`);
 
-    // Reset form fields
+    
     setName("");
     setQuantity(1);
     setCategory("produce");
@@ -45,26 +40,27 @@ export default function NewItem() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-20 p-6 bg-blue-50 rounded-lg w-80 mx-auto shadow-md"
+      className="text-center mt-20 p-4 bg-blue-50 rounded-lg w-80 mx-auto shadow-md"
     >
-      <h2 className="text-2xl font-semibold mb-6 text-center">Add New Item</h2>
+      <h2 className="text-2xl font-semibold mb-6">Add New Item</h2>
 
-      {/* ✅ Name Field */}
-      <div className="mb-4">
-        <label className="block text-left font-medium mb-1">Item Name</label>
+      {/* item name field */}
+      <div className="mb-4 text-left">
+        <label className="block font-medium mb-1">Item Name</label>
         <input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          placeholder="Enter item name"
+          placeholder="e.g. eggs, milk, 3L ,etc"
           className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
       </div>
 
-      {/* ✅ Quantity Controls */}
-      <div className="mb-4 text-center">
-        <label className="block font-medium mb-2">Quantity: {quantity}</label>
+      {/* Quantity*/}
+      <div className="text-center mt-6 p-4 bg-blue-50 rounded-lg">
+        <h2 className="text-xl font-semibold mb-4">Quantity: {quantity}</h2>
+
         <div className="flex justify-center space-x-4">
           <button
             type="button"
@@ -84,12 +80,14 @@ export default function NewItem() {
             +
           </button>
         </div>
-        <p className="text-sm text-gray-500 mt-2">Min: 1 | Max: 20</p>
+
+        <p className="Limit mt-2">Value Limits</p>
+        <p className="text-sm text-gray-500 mt-1">Min: 1 | Max: 20</p>
       </div>
 
-      {/* ✅ Category Dropdown */}
-      <div className="mb-6">
-        <label className="block text-left font-medium mb-1">Category</label>
+      {/*category field */}
+      <div className="mt-6 text-left">
+        <label className="block font-medium mb-1">Category</label>
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
@@ -109,10 +107,11 @@ export default function NewItem() {
         </select>
       </div>
 
-      {/* ✅ Submit Button */}
+      {/* Submit Button */}
+      
       <button
         type="submit"
-        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
+        className="w-full mt-6 bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
       >
         Add Item
       </button>
