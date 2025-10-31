@@ -29,17 +29,14 @@ export default function MealIdeas({ ingredient }) {
         Meal Ideas {ingredient ? `for "${ingredient}"` : ""}
       </h2>
       {!ingredient ? (
-        <p className="text-gray-500 text-center">Select an ingredient to see meal ideas.</p>
+        <p className="text-gray-500 text-center">
+          Select an ingredient to see meal ideas.
+        </p>
       ) : meals.length > 0 ? (
-        <ul className="space-y-2">
+        <ul className="list-disc list-inside space-y-1">
           {meals.map((meal) => (
-            <li key={meal.idMeal} className="flex items-center space-x-3">
-              <img
-                src={meal.strMealThumb}
-                alt={meal.strMeal}
-                className="w-16 h-16 rounded-lg"
-              />
-              <span className="font-medium">{meal.strMeal}</span>
+            <li key={meal.idMeal} className="text-gray-700 font-medium">
+              {meal.strMeal}
             </li>
           ))}
         </ul>

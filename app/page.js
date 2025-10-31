@@ -22,6 +22,8 @@ export default function DisplayAssignments() {
       <Link href="/week-7">Week 7</Link>
       <br></br>
 
+      <Link href="/week-8">Week 8</Link>
+      <br></br>
 
     </main>
   )
